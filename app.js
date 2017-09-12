@@ -57,7 +57,6 @@ var controller = (function(budgetCtrl, UICtrl) {
 	};
 
 
-
 	var ctrlAddItem = function() {
 		//Get the field input data
 
@@ -74,6 +73,13 @@ var controller = (function(budgetCtrl, UICtrl) {
 
 	};
 
-
+	return {
+		init: function() {
+			console.log('App has started');
+			setupEventListeners();
+		}
+	}
 
 })(budgetController, UIController);
+
+controller.init();
