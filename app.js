@@ -1,4 +1,4 @@
-	//Budget Controller
+	//Budget Controller - all budget related functions set in IIFE including Data structure
 var budgetController = (function() {
 
 	var Expense = function(id, description, value) {
