@@ -91,13 +91,13 @@ var UIController = (function() {
 			element = DOMstrings.incomeContainer;
 			html = `<div class="item clearfix" id="income-%id%"><div class="item__description">%Description%</div>
 			        <div class="right clearfix"><div class="item__value">%Value%</div>
-			        <div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+			        <div class="item__delete"><button class="item__delete--btn"><i class="fa fa-trash" aria-hidden="true"></i></button>
 			</div></div></div>`
 		} else if (type === 'exp') {
 			element = DOMstrings.expensesContainer;
 			html = `<div class="item clearfix" id="expense-%id%"><div class="item__description">%Description%</div>
 					    <div class="right clearfix"><div class="item__value">%Value%</div><div class="item__percentage">21%</div>
-					    <div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+					    <div class="item__delete"><button class="item__delete--btn"><i class="fa fa-trash" aria-hidden="true"></i></button>
 					    </div></div></div>`
 		}
 
