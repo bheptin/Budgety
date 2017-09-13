@@ -79,7 +79,7 @@ var UIController = (function() {
 			return {
 				 type: document.querySelector(DOMstrings.inputType).value, //Will be either inc or exp
 				 description: document.querySelector(DOMstrings.inputDescription).value,
-				 value: document.querySelector(DOMstrings.inputValue).value,
+				 value: parseFloat(document.querySelector(DOMstrings.inputValue).value)
 			};
 
 		},
@@ -151,6 +151,14 @@ var controller = (function(budgetCtrl, UICtrl) {
 		});
 	};
 
+	var updateBudget = function() {
+
+		//Calculate budget
+
+		//Return the budget
+
+		//Display the budget in the UI
+	}
 
 	var ctrlAddItem = function() {
 		var input, newItem;
@@ -159,17 +167,20 @@ var controller = (function(budgetCtrl, UICtrl) {
 		input = UICtrl.getInput();
 		console.log(input);
 
-		//Add item to Controller
-		newItem = budgetCtrl.addItem(input.type, input.description, input.value);
-		//add item to UI
-		UICtrl.addListItem(newItem, input.type);
+		if (input.description !== "" && !isNaN(input.value) && input.value > 0) {
+			//Add item to Controller
+			newItem = budgetCtrl.addItem(input.type, input.description, input.value);
+			//add item to UI
+			UICtrl.addListItem(newItem, input.type);
 
-		//Clear the fields
-		UICtrl.clearFields();
+			//Clear the fields
+			UICtrl.clearFields();
 
-		//Calculate budget
+			// Calculate and Update budget
+			updateBudget();
+		}
 
-		//Display the budget in the UI
+
 
 	};
 
